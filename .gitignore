@@ -8,4 +8,4 @@ node_modules
 !.env.example
 
 # Firebase config file
-/util/firebase-config.js
+src/util/firebase-config.js
