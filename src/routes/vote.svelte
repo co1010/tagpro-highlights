@@ -61,7 +61,7 @@
                 </div>
                 <Clip showControls={!rightHover} src={url1} ratio={ratio1}/>
                 <div class="flex justify-center m-8">
-                    <LikeButton id={id1}/>
+                    <LikeButton id={id1} {db}/>
                 </div>
             </div>
         {/if}
@@ -75,7 +75,7 @@
                 </div>
                 <Clip showControls={!leftHover} src={url2} ratio={ratio2}/>
                 <div class="flex justify-center m-8">
-                    <LikeButton id={id2}/>
+                    <LikeButton id={id2} {db}/>
                 </div>
             </div>
         {/if}
