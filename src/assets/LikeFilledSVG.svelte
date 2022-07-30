@@ -1,6 +1,4 @@
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg height="32" width="32" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<svg class="h-6 w-6 fill-black inline align-baseline" viewBox="0 0 512 512">
 			<path d="M160,224H53.333C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64
 				c29.397,0,53.333-23.936,53.333-53.333V234.667C170.667,228.779,165.888,224,160,224z"/>
 			<path d="M512,304c0-12.821-5.099-24.768-13.867-33.6c9.963-10.901,15.04-25.536,13.632-40.725
