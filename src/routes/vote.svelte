@@ -57,7 +57,7 @@
         {#if url1}
             <div>
                 <div class="flex justify-center">
-                    <h1 class="text-2xl h-8">{title1}</h1>
+                    <h1 class="text-4xl h-8">{title1}</h1>
                 </div>
                 <Clip showControls={!rightHover} src={url1} ratio={ratio1}/>
                 <div class="flex justify-center m-8">
@@ -71,7 +71,7 @@
         {#if url2}
             <div>
                 <div class="flex justify-center">
-                    <h1 class="text-2xl h-8">{title2}</h1>
+                    <h1 class="text-4xl h-8">{title2}</h1>
                 </div>
                 <Clip showControls={!leftHover} src={url2} ratio={ratio2}/>
                 <div class="flex justify-center m-8">

@@ -7,7 +7,7 @@
 	let divWidth, divHeight;
 	$: divRatio = divWidth/divHeight;
 
-	export let showControls;
+	export let showControls = true;
 	let showControlsTimeout;
 
 	export let src;
