@@ -23,7 +23,7 @@
                     this website idea in August 2022. Since I was changing jobs I had some free time
                     and figured I could use it to a) make something cool and b) learn a new web
                     dev framework. Speaking of which, this website was built with Svelte and uses
-                    Firestore as its database.
+                    Firestore as its database :)
                 </p>
             </div>
     </div>
