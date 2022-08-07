@@ -12,6 +12,7 @@
 
 	export let src;
 	export let ratio;
+	export let size = '3/4';
 
 	// Used to track time of last mouse down event
 	let lastMouseDown;
@@ -55,8 +56,11 @@
 	}
 </script>
 
-<div class="h-5/6" bind:clientWidth={divWidth} bind:clientHeight={divHeight}>
-	<div class="controls" style="opacity: {duration && showControls ? 1 : 0}; top: {divRatio >= ratio-.01 ? 0 : (divHeight-((divHeight*(divRatio/ratio))))/2}px">
+<div class="h-{size} border" bind:clientWidth={divWidth} bind:clientHeight={divHeight}>
+	<div class="controls" style="opacity: {duration && showControls ? 1 : 0}; 
+		top: {divRatio >= ratio-.01 ? 0 : (divHeight-(divHeight*(divRatio/ratio)))/2}px; 
+		left: {divRatio <= ratio+.01 ? 0 : (divWidth-(divWidth*(ratio/divRatio)))/2}px; 
+		width: {divRatio <= ratio+.01 ? divWidth : divWidth*(ratio/divRatio)}px">
 		<progress value="{(time / duration) || 0}"/>
 
 		<div class="info">
@@ -88,7 +92,6 @@
 
 	.controls {
 		position: absolute;
-		width: 100%;
 		transition: opacity 1s;
 	}
 

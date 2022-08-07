@@ -35,6 +35,6 @@ import Clip from '../../components/Clip.svelte';
 <div class="w-screen h-screen flex justify-center">
     <div class="w-3/5 mt-8">
         <h1 class="text-4xl text-center">{title}</h1>
-        <Clip src={url} ratio={ratio}/>
+        <Clip src={url} ratio={ratio} size='5/6'/>
     </div>
 </div>

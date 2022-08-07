@@ -56,11 +56,11 @@
         class="max-h-screen flex-auto w-1/6 hover:w-5/6 bg-indigo-500 flex justify-center transition-all ease duration-250 delay-75">
         {#if url1}
             <div>
-                <div class="flex justify-center">
+                <div class="flex justify-center m-4">
                     <h1 class="text-4xl h-8">{title1}</h1>
                 </div>
-                <Clip showControls={!rightHover} src={url1} ratio={ratio1}/>
-                <div class="flex justify-center m-8">
+                <Clip showControls={!rightHover} src={url1} ratio={ratio1} size='3/4'/>
+                <div class="flex justify-center m-6">
                     <LikeButton id={id1} {db}/>
                 </div>
             </div>
@@ -70,11 +70,11 @@
         class="max-h-screen flex-auto w-1/6 hover:w-5/6 bg-cyan-500 flex justify-center transition-all ease duration-250 delay-75">
         {#if url2}
             <div>
-                <div class="flex justify-center">
+                <div class="flex justify-center m-4">
                     <h1 class="text-4xl h-8">{title2}</h1>
                 </div>
-                <Clip showControls={!leftHover} src={url2} ratio={ratio2}/>
-                <div class="flex justify-center m-8">
+                <Clip showControls={!leftHover} src={url2} ratio={ratio2} size='3/4'/>
+                <div class="flex justify-center m-6">
                     <LikeButton id={id2} {db}/>
                 </div>
             </div>
