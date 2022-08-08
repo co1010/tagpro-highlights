@@ -6,5 +6,7 @@
 {#if admins.includes(user)}
     <div>welcome admin</div>
 {:else}
-    <div>you suck</div>
+    <div class="w-screen h-screen grid place-content-center">
+        <div class="bg-white text-4xl p-8">Unauthorized. Contact me on discord if you want to help with moderation.</div>
+    </div>
 {/if}
