@@ -56,7 +56,7 @@
 	}
 </script>
 
-<div class="h-{size} border" bind:clientWidth={divWidth} bind:clientHeight={divHeight}>
+<div class="h-{size}" bind:clientWidth={divWidth} bind:clientHeight={divHeight}>
 	<div class="controls" style="opacity: {duration && showControls ? 1 : 0}; 
 		top: {divRatio >= ratio-.01 ? 0 : (divHeight-(divHeight*(divRatio/ratio)))/2}px; 
 		left: {divRatio <= ratio+.01 ? 0 : (divWidth-(divWidth*(ratio/divRatio)))/2}px; 
