@@ -20,7 +20,7 @@
                 <p>
                     This website was made by Colin / <a href="https://github.com/co1010" target="_blank">
                     <Github/> co1010</a> / CoolCat. I originally had
-                    this website idea in August 2022. Since I was changing jobs I had some free time
+                    this website idea in July 2022. Since I was changing jobs I had some free time
                     and figured I could use it to a) make something cool and b) learn a new web
                     dev framework. Speaking of which, this website was built with Svelte and uses
                     Firestore as its database :)
