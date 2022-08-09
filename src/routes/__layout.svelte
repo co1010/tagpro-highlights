@@ -3,13 +3,14 @@
     import { onMount } from "svelte";
     import firebaseConfig from "../util/firebase-config";
     import { initializeApp } from "firebase/app";
-    import { getFirestore, doc, setDoc } from "firebase/firestore";
+    import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
 
     onMount(async () => {
         if (localStorage.getItem('userid') == null) {
-            localStorage.setItem('userid', Date.now());
             const db = getFirestore(initializeApp(firebaseConfig));
+            localStorage.setItem('userid', Date.now());
+            localStorage.setItem('seen', JSON.stringify([]));
             // Add new user in users collection
             await setDoc(doc(db, "users", localStorage.getItem('userid')), {
                 seen: [],

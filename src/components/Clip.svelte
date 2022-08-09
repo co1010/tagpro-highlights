@@ -39,7 +39,7 @@
 	}
 
 	function handleMouseup(e) {
-		if (new Date() - lastMouseDown < 300) {
+		if (new Date() - lastMouseDown < 400) {
 			if (paused) e.target.play();
 			else e.target.pause();
 		}
