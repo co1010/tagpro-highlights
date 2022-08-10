@@ -6,7 +6,7 @@
 - [x] Individual video player for leaderboard
 - [x] Admin page
 - [ ] Script to scrape reddit for videos -> show to admin -> admin manually approves -> add to db
-- [ ] Algorithm to show users a pair of videos they haven't seen before. On page load and after voting.
+- [x] Algorithm to show users a pair of videos they haven't seen before. On page load and after voting.
 - [ ] Request to name a video in vote page or individual video page (max 69 chars)
 - [ ] Admin functionality to approve/deny name requests
 - [ ] Add tutorial/explanation on first visit to vote page
