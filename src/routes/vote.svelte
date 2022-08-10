@@ -39,7 +39,6 @@
                 id1 = Math.floor(Math.random() * numVids)+1;
                 id2 = Math.floor(Math.random() * (numVids-1))+1;
                 if (id2 === id1) id2 = numVids;
-                console.log(id1 + ' ' + id2);
             } while (seen.includes(idToKey(id1, id2)) || seen.includes(idToKey(id2, id1)));
         }
     }
@@ -91,7 +90,7 @@
         {#if url1}
             <div>
                 <div class="flex justify-center m-4">
-                    <h1 class="text-4xl h-8">{title1}</h1>
+                    <h1 class="text-4xl h-8 break-all">{title1}</h1>
                 </div>
                 <Clip showControls={!rightHover} src={url1} ratio={ratio1} size='3/4'/>
                 <div class="flex justify-center m-6">
@@ -105,7 +104,7 @@
         {#if url2}
             <div>
                 <div class="flex justify-center m-4">
-                    <h1 class="text-4xl h-8">{title2}</h1>
+                    <h1 class="text-4xl h-8 break-all">{title2}</h1>
                 </div>
                 <Clip showControls={!leftHover} src={url2} ratio={ratio2} size='3/4'/>
                 <div class="flex justify-center m-6">
