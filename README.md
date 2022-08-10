@@ -15,6 +15,5 @@
 ## Things that may be an issue in the future
 
 * Video likes can only be incremented once every second. Distributed incrementing???
-* Leaderboard space issue with a lot of videos
 * Server costs
 
