@@ -17,8 +17,8 @@
     })
 </script>
 
-<div class="w-screen h-screen grid place-content-center">
-    <div class="bg-white px-16 py-12 w-full">
+<div class="w-screen min-h-screen flex justify-center">
+    <div class="bg-white p-12 my-12">
         <h1 class="text-4xl text-black text-center pb-8">Leaderboard</h1>
         {#if videos}
         <table class="table-fixed">
@@ -37,6 +37,8 @@
                 {/each}
             </tbody>
         </table>
+        <div class="h-screen"></div>
+        <div class="h-screen"></div>
         {:else}
             <div class="flex justify-center">
                 <LoadingSvg/>
