@@ -31,8 +31,6 @@
     function setValidIds() {
         if (seen.length >= (numVids*(numVids-1))/2) {
             alert("You've seen every video combination! You can't vote any more.");
-            id1 = null;
-            id2 = null;
             close();
         } else {
             do {
@@ -44,6 +42,8 @@
     }
 
     async function rerollVideos() {
+        id1 = null;
+        id2 = null;
         setValidIds();
         if (id1 != null) {
             const docData1 = await (await getDoc(doc(db, "videos", id1.toString()))).data();
@@ -84,33 +84,39 @@
 
 </script>
 
-<div class="container flex flex-row min-w-full gap-0 h-screen overflow-hidden">
+<div class="container flex flex-row min-w-full gap-0 h-screen">
     <div on:mouseleave={() => {leftHover = false}} on:mouseenter={() => leftHover = true} 
-        class="max-h-screen flex-auto w-1/6 hover:w-5/6 bg-indigo-500 flex justify-center transition-all ease duration-250 delay-75">
-        {#if url1}
-            <div>
-                <div class="flex justify-center m-4">
-                    <h1 class="text-4xl h-8 break-all">{title1}</h1>
+        class="h-screen max-h-screen flex-auto w-1/6 hover:w-5/6 bg-indigo-500 transition-all ease duration-250 delay-75">
+        {#if id1 && url1}
+            <div class="h-screen max-h-screen flex flex-col">
+                <h1 class="flex-initial text-4xl h-8 break-words text-center">{title1}</h1>
+                <div class="grow flex justify-center items-center">
+                    <div style="max-width: 80%;">
+                        <Clip showControls={!rightHover} src={url1} ratio={ratio1} size='3/4'/>
+                    </div>
                 </div>
-                <Clip showControls={!rightHover} src={url1} ratio={ratio1} size='3/4'/>
-                <div class="flex justify-center m-6">
+                <div class="flex-initial flex justify-center mb-4">
                     <LikeButton {db} id={id1} otherId={id2} {setSeen} {rerollVideos}/>
                 </div>
             </div>
         {/if}
     </div>
     <div on:mouseleave={() => {rightHover = false}} on:mouseenter={() => rightHover = true} 
-        class="max-h-screen flex-auto w-1/6 hover:w-5/6 bg-cyan-500 flex justify-center transition-all ease duration-250 delay-75">
-        {#if url2}
-            <div>
-                <div class="flex justify-center m-4">
-                    <h1 class="text-4xl h-8 break-all">{title2}</h1>
+        class="max-h-screen flex-auto w-1/6 hover:w-5/6 bg-cyan-500 flex flex-col justify-center transition-all ease duration-250 delay-75">
+        {#if id2 && url2}
+            <div class="h-screen flex flex-col">
+                <h1 class="flex-initial text-4xl h-8 break-words text-center">{title2}</h1>
+                <div class="grow flex justify-center items-center">
+                    <div style="max-width: 80%;">
+                        <Clip showControls={!leftHover} src={url2} ratio={ratio2} size='3/4'/>
+                    </div>
                 </div>
-                <Clip showControls={!leftHover} src={url2} ratio={ratio2} size='3/4'/>
-                <div class="flex justify-center m-6">
+                <div class="flex-initial flex justify-center mb-4">
                     <LikeButton {db} id={id2} otherId={id1} {setSeen} {rerollVideos}/>
                 </div>
             </div>
         {/if}
     </div>
 </div>
+
+
