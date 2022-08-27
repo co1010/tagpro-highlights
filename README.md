@@ -11,6 +11,7 @@
 - [x] Admin functionality to approve/deny name requests
 - [ ] Add tutorial/explanation on first visit to vote page
 - [ ] Don't allow voting if user hasn't watched at least 75% of each video (save videos user has already watched so they dont need to rewatch to satisfy this requirement)
+- [ ] Users can only view leaderboard if they have voted at least 5 times
 
 ## Things that may be an issue in the future
 

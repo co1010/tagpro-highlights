@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-p, ol, li, h1, span, a, td, th {
+p, ol, li, h1, span, a, td, th, input {
     font-family: 'Courier New', Courier, monospace;
 }
 

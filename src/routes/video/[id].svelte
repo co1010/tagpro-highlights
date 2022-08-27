@@ -5,7 +5,8 @@
     import { initializeApp } from "firebase/app";
     import { getFirestore, doc, getDoc } from "firebase/firestore";
     import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import Clip from '../../components/Clip.svelte';
+    import Clip from '../../components/Clip.svelte';
+    import ClipTitle from '../../components/ClipTitle.svelte';
 
     // Initialize firebase
     const app = initializeApp(firebaseConfig);
@@ -34,7 +35,8 @@ import Clip from '../../components/Clip.svelte';
 
 <div class="w-screen h-screen flex justify-center">
     <div class="w-3/5 mt-8">
-        <h1 class="text-4xl text-center">{title}</h1>
+        <ClipTitle {title}/>
+        <br/>
         <Clip src={url} ratio={ratio} size='5/6'/>
     </div>
 </div>
