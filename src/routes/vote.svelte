@@ -5,12 +5,10 @@
     import { onMount } from "svelte";
     import { initializeApp } from "firebase/app";
     import { getFirestore, doc, getDoc } from "firebase/firestore";
-    import { getStorage, ref, getDownloadURL } from "firebase/storage";
     
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-    const storage = getStorage(app);
 
     let id1;
     let id2;
@@ -26,6 +24,7 @@
 
     function setSeen() {
         seen.push(idToKey(id1, id2));
+        localStorage.setItem('seen', JSON.stringify(seen));
     }
 
     function setValidIds() {
@@ -48,33 +47,17 @@
         if (id1 != null) {
             const docData1 = await (await getDoc(doc(db, "videos", id1.toString()))).data();
             title1 = docData1.title;
-            ratio1 = docData1.width / docData1.height;
-            const gsRef1 = ref(storage, docData1.gsPath);
-            // Get the download URL
-            getDownloadURL(gsRef1)
-                .then((url) => {
-                    url1 = url;
-                })
-                .catch((error) => {
-                    console.log(`Error: ${error.code}`);
-                });
+            ratio1 = docData1.ratio;
+            url1 = docData1.url;
             const docData2 = await (await getDoc(doc(db, "videos", id2.toString()))).data();
             title2 = docData2.title;
-            ratio2 = docData2.width / docData2.height;
-            const gsRef2 = ref(storage, docData2.gsPath);
-            // Get the download URL
-            getDownloadURL(gsRef2)
-                .then((url) => {
-                    url2 = url;
-                })
-                .catch((error) => {
-                    console.log(`Error: ${error.code}`);
-                });
+            ratio2 = docData2.ratio;
+            url2 = docData2.url;
         }
     }
 
     onMount(async () => {
-        seen = await (await getDoc(doc(db, 'users', localStorage.getItem('userid')))).data().seen;
+        seen = JSON.parse(localStorage.getItem('seen'));
         numVids = await (await getDoc(doc(db, 'meta', 'videos'))).data().amount;
         rerollVideos();
     });

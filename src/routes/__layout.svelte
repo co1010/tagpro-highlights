@@ -13,7 +13,6 @@
             localStorage.setItem('seen', JSON.stringify([]));
             // Add new user in users collection
             await setDoc(doc(db, "users", localStorage.getItem('userid')), {
-                seen: [],
                 votes: 0
             });
         }
