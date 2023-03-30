@@ -14,8 +14,9 @@
 	export let ratio;
 	export let size = '3/4';
 
-	// Used to track time of last mouse down event
+	// Used to track time and position of last mouse down event
 	let lastMouseDown;
+	let lastMouseDownX;
 
 	function handleMove(e) {
 		// Make the controls visible, but fade out after
@@ -28,6 +29,8 @@
 		if (e.type !== 'touchmove' && !(e.buttons & 1)) return; // mouse not down
 
 		const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+		// Only seek if mouse moves more than 20 pixels
+		if (Math.abs(lastMouseDownX - clientX) < 20) return;
 		const { left, right } = this.getBoundingClientRect();
 		time = duration * (clientX - left) / (right - left);
 	}
@@ -36,12 +39,19 @@
 	// after a drag — we have to listen for clicks ourselves
 	function handleMousedown(e) {
 		lastMouseDown = new Date();
+		lastMouseDownX = e.clientX;
 	}
 
 	function handleMouseup(e) {
 		if (new Date() - lastMouseDown < 400) {
-			if (paused) e.target.play();
-			else e.target.pause();
+			console.log(paused);
+			if (paused) {
+				e.target.play();
+				paused = false;
+			} else {
+				e.target.pause();
+				paused = true;
+			}
 		}
 	}
 
