@@ -37,8 +37,6 @@
                 {/each}
             </tbody>
         </table>
-        <div class="h-screen"></div>
-        <div class="h-screen"></div>
         {:else}
             <div class="flex justify-center">
                 <LoadingSvg/>
