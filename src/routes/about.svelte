@@ -14,7 +14,9 @@
                     Users are shown two clips on the vote page and will vote for the better
                     clip after watching both of them. After a user votes at least 5 times, they
                     can see the leaderboard, which is a ranking of all clips based on the sum of
-                    votes they received in the voting process.
+                    votes they received in the voting process. Use the refresh symbol below each
+                    clip to reload the video if something goes wrong. If it still doesn't work,
+                    send me a message on discord: co1010#3489
                 </p>
                 <h1 class="text-4xl underline pb-2 pt-8">About The Site</h1>
                 <p>
