@@ -10,6 +10,8 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+    let leftHover = false;
+    let rightHover = false;
     let id1;
     let id2;
     let url1, url2;
@@ -62,9 +64,6 @@
         rerollVideos();
     });
 
-    let leftHover = false;
-    let rightHover = false;
-
 </script>
 
 <div class="container flex flex-row min-w-full gap-0 h-screen">
@@ -79,7 +78,7 @@
                     </div>
                 </div>
                 <div class="flex-initial flex justify-center mb-4">
-                    <LikeButton {db} id={id1} otherId={id2} {setSeen} {rerollVideos}/>
+                    <LikeButton {db} id={id1} otherId={id2} {setSeen} {rerollVideos} />
                 </div>
             </div>
         {/if}
@@ -95,7 +94,7 @@
                     </div>
                 </div>
                 <div class="flex-initial flex justify-center mb-4">
-                    <LikeButton {db} id={id2} otherId={id1} {setSeen} {rerollVideos}/>
+                    <LikeButton {db} id={id2} otherId={id1} {setSeen} {rerollVideos} />
                 </div>
             </div>
         {/if}
