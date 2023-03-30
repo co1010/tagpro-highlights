@@ -18,7 +18,7 @@
         await updateDoc(doc(db, "videos", id.toString()), {
             likes: increment(1)
         });
-        await updateDoc(doc(db, "users", localStorage.getItem('userid')), {
+        await updateDoc(doc(db, "users", localStorage.getItem('tphuserid')), {
             votes: increment(1),
             seen: arrayUnion(id*10000+otherId)
         });

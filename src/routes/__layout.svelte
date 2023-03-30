@@ -7,12 +7,12 @@
 
 
     onMount(async () => {
-        if (localStorage.getItem('userid') == null) {
+        if (localStorage.getItem('tphuserid') == null) {
             const db = getFirestore(initializeApp(firebaseConfig));
-            localStorage.setItem('userid', Date.now());
+            localStorage.setItem('tphuserid', Date.now());
             localStorage.setItem('seen', JSON.stringify([]));
             // Add new user in users collection
-            await setDoc(doc(db, "users", localStorage.getItem('userid')), {
+            await setDoc(doc(db, "users", localStorage.getItem('tphuserid')), {
                 votes: 0
             });
         }
