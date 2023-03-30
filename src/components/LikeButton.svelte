@@ -8,6 +8,7 @@
     export let otherId;
     export let setSeen;
     export let rerollVideos;
+    export let bothWatched;
 
     let likeIcon = LikeFilledSvg;
     let clicked = false;
@@ -15,15 +16,19 @@
     async function onClick() {
         // also set both video combos to seen and reload the videos
         clicked = true;
-        await updateDoc(doc(db, "videos", id.toString()), {
-            likes: increment(1)
-        });
-        await updateDoc(doc(db, "users", localStorage.getItem('tphuserid')), {
-            votes: increment(1),
-            seen: arrayUnion(id*10000+otherId)
-        });
-        setSeen();
-        rerollVideos();
+        if (!bothWatched) {
+            alert('You need to watch at least half of both videos in order to vote');
+        } else {
+            await updateDoc(doc(db, "videos", id.toString()), {
+                likes: increment(1)
+            });
+            await updateDoc(doc(db, "users", localStorage.getItem('tphuserid')), {
+                votes: increment(1),
+                seen: arrayUnion(id*10000+otherId)
+            });
+            setSeen();
+            rerollVideos();
+        }
         clicked = false;
     }
 </script>

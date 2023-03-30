@@ -13,10 +13,13 @@
 	export let src;
 	export let ratio;
 	export let size = '3/4';
+	export let hasWatched;
 
 	// Used to track time and position of last mouse down event
 	let lastMouseDown;
 	let lastMouseDownX;
+
+	$: if (time > duration / 2) hasWatched = true;
 
 	function handleMove(e) {
 		// Make the controls visible, but fade out after
@@ -44,7 +47,6 @@
 
 	function handleMouseup(e) {
 		if (new Date() - lastMouseDown < 400) {
-			console.log(paused);
 			if (paused) {
 				e.target.play();
 				paused = false;
