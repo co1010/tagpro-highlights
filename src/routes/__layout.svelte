@@ -11,6 +11,7 @@
             const db = getFirestore(initializeApp(firebaseConfig));
             localStorage.setItem('tphuserid', Date.now());
             localStorage.setItem('seen', JSON.stringify([]));
+            localStorage.setItem('watched', JSON.stringify([]));
             // Add new user in users collection
             await setDoc(doc(db, "users", localStorage.getItem('tphuserid')), {
                 votes: 0
